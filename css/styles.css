@@ -1,0 +1,34 @@
+.slider-content {
+    display: flex; /* Les images vont se positionner côte à côte */
+    overflow: auto; /* Mise en place d'une barre de défilement */
+    gap: 20px; /* Permet de gerer l'espacement entre chaque image */
+    flex-flow: row nowrap; /* Le flux est en flux en ligne et ne va jamais à la ligne */
+    scroll-snap-type: x mandatory; /* On veut obligatoirement sur l'axe horizontal un snap, s'arrêter sur une image */
+    /* Pour IE et Edge */
+    -ms-overflow-style: none; /* fonction non standard car ne fonctionne que sur IE et Edge */
+    /* Firefox */
+    scrollbar-width: none; /* Supprime la barre de défilement */
+}
+
+/* Chromium */
+.slider-content::-webkit-scrollbar {
+    display: none; /* N'affiche pas la scrollbar */
+}
+
+.slider-content .card {
+    flex: 1 0 200px;
+    margin: 0; /* On retire les marges autour des photos */
+    scroll-snap-align: start; /* aligne toi sur le côté gauche de mes images */
+}
+
+.slider-content .card .card-img {
+    width: 100%; /* Taille 100% du parent */
+}
+
+/* A partir de 1200px la taille des images changent */
+@media screen and (min-width: 1200px) {
+    .slider-content .card {
+        flex: 1 0 400px;
+    }
+    
+}
