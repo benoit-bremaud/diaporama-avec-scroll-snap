@@ -1,3 +1,7 @@
+.slider{
+    position: relative;
+}
+
 .slider-content {
     display: flex; /* Les images vont se positionner côte à côte */
     overflow: auto; /* Mise en place d'une barre de défilement */
@@ -19,10 +23,37 @@
     flex: 1 0 200px;
     margin: 0; /* On retire les marges autour des photos */
     scroll-snap-align: start; /* aligne toi sur le côté gauche de mes images */
+    position: relative;
 }
 
 .slider-content .card .card-img {
     width: 100%; /* Taille 100% du parent */
+}
+
+.slider .card-caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.slider .nav-prev, .slider .nav-next{
+    cursor: pointer; /* Change la forme du pointeur lorsque celui-ci passe dessus */
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    transform: translateY(-50%);
+}
+
+.slider .nav-next{
+    left: unset;
+    right: 10px;
 }
 
 /* A partir de 1200px la taille des images changent */
